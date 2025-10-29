@@ -5,7 +5,7 @@ const CONFIG = {
     SPOTIFY_UPDATE_INTERVAL: 5000
 };
 
-let currentDiscordHandle = '@cenfoire';
+let currentDiscordHandle = '@woefallen';
 let lastDiscordUpdate = 0;
 let lastSpotifyUpdate = 0;
 let spotifyProgress = 0;
@@ -87,9 +87,9 @@ function initializeEntryPage() {
             const playPromise = backgroundMusic.play();
             if (playPromise !== undefined) {
                 playPromise.then(() => {
-                    console.log('Musique démarrée avec succès');
+                    console.log('Music started successfully');
                 }).catch(error => {
-                    console.log('Erreur lors du démarrage de la musique:', error);
+                    console.log('Error starting music:', error);
                 });
             }
             
@@ -129,9 +129,9 @@ function initializeEntryPage() {
                 const playPromise = backgroundMusic.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
-                        console.log('Musique remise');
+                        console.log('Music delivered');
                     }).catch(error => {
-                        console.log('Erreur lors de la remise de la musique:', error);
+                        console.log('Error handing over music:', error);
                     });
                 }
             }
@@ -159,7 +159,7 @@ function initializeTypingEffect() {
     if (!typingText) return;
     
     const texts = [
-        'made by @cenfoire',
+        'made by @woefallen',
         'creative developer',
         'digital minimalist',
         'code architect',
@@ -513,3 +513,4 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSocialLinks();
 
 });
+
