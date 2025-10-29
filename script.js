@@ -1,6 +1,6 @@
 const CONFIG = {
-    DISCORD_USER_ID: '200207310625177602',
-    SPOTIFY_CLIENT_ID: 'dd3631db64a24da8a1d5bba2ea489a6e',
+    DISCORD_USER_ID: '305457735560986625',
+    SPOTIFY_CLIENT_ID: '3b7166bd46524ee295b3d4fa9e6a32d9',
     UPDATE_INTERVAL: 30000,
     SPOTIFY_UPDATE_INTERVAL: 5000
 };
@@ -265,10 +265,10 @@ function updateDiscordUI(userData) {
     }
     
     const statusTexts = {
-        'online': 'En ligne - Disponible pour des projets',
-        'idle': 'Absent - Répondra plus tard',
-        'dnd': 'Ne pas déranger - Occupé',
-        'offline': 'Hors ligne - Laissez un message'
+        'online': 'Online - jacking off or skidding who knows',
+        'idle': 'afk - Will respond later',
+        'dnd': 'Do not disturb - Busy',
+        'offline': 'Offline - Leave a message'
     };
     
     if (mainStatusText) {
@@ -318,7 +318,7 @@ async function updateSpotifyStatus() {
             updateSpotifyUI(null);
         }
     } catch (error) {
-        console.log('Erreur lors de la récupération des données Spotify:', error);
+        console.log('Error recovering Spotify data:', error);
         updateSpotifyUI(null);
     }
 }
@@ -459,7 +459,7 @@ async function copyToClipboard(text) {
             return result;
         }
     } catch (err) {
-        console.error('Erreur lors de la copie:', err);
+        console.error('Error copying:', err);
         return false;
     }
 }
@@ -476,8 +476,8 @@ function initializeSocialLinks() {
             
             if (!linkUrl) {
                 showNotification(
-                    'Erreur',
-                    'Aucun lien configuré pour cette plateforme',
+                    'Error',
+                    'No links configured for this platform',
                     'error'
                 );
                 return;
@@ -492,14 +492,14 @@ function initializeSocialLinks() {
             
             if (success) {
                 showNotification(
-                    `${platform} copié !`,
-                    `Le lien a été copié dans votre presse-papiers`,
+                    `${platform} copied !`,
+                    `The link has been copied to your clipboard`,
                     'success'
                 );
             } else {
                 showNotification(
-                    'Erreur de copie',
-                    'Impossible de copier le lien automatiquement',
+                    'Copy error',
+                    'Unable to copy link automatically',
                     'error'
                 );
             }
@@ -511,4 +511,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCursor();
     initializeEntryPage();
     initializeSocialLinks();
+
 });
